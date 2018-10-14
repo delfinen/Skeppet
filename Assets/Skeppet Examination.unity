@@ -222,6 +222,7 @@ MonoBehaviour:
   rend: {fileID: 587083076}
   timer: 0
   timestart: 0
+  shipspeed: 10
 --- !u!212 &587083076
 SpriteRenderer:
   m_ObjectHideFlags: 0

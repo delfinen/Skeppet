@@ -92,6 +92,7 @@ public class StarShipScript : MonoBehaviour
         }
 
 
+        //gör så att när skeppet kommer i kontakt med y vilket är upp eller ner och x häger eller vänster gör det så det poppar upp på motsatta sida
         if (transform.position.x <= -10.4)
         {
             transform.position = new Vector3(10.3f, transform.position.y);
