@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class StarShipScript : MonoBehaviour
 {
-
+    // några nice variabler
     [Range(-720, 720)]
     public float rotationspeed;
     public SpriteRenderer rend;
     public float timer;
     public float timestart;
+    public int shipspeed;
 
 
 
@@ -17,8 +18,27 @@ public class StarShipScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        
+
+        //random roationsfart
+        rotationspeed = Random.Range(200, 401);
+
+
+
+        //random hastighet
+        shipspeed = Random.Range(5, 31);
+
+        //ger random position varje gång man startar
+        transform.position = new Vector3(Random.Range(-10, 11f), Random.Range(-5, 6f));
+
+
+        // gör så timern är 0 vid start
         timestart = 0;
+        //timern är timerstart
         timer = timestart;
+
+        // rotationsfarten är lika med 200
         rotationspeed = 200;
     }
 
@@ -72,7 +92,26 @@ public class StarShipScript : MonoBehaviour
         }
 
 
+        if (transform.position.x <= -10.4)
+        {
+            transform.position = new Vector3(10.3f, transform.position.y);
+        }
 
+        if (transform.position.x >= 10.4)
+        {
+            transform.position = new Vector3(-10.3f, transform.position.y);
+        }
+
+
+        if (transform.position.y <= -6.5)
+        {
+            transform.position = new Vector3(transform.position.x, 6.4f);
+        }
+
+        if (transform.position.y >= 6.5)
+        {
+            transform.position = new Vector3(transform.position.x, -6.4f);
+        }
 
 
     }
