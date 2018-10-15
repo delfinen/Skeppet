@@ -38,8 +38,8 @@ public class StarShipScript : MonoBehaviour
         //timern är timerstart
         timer = timestart;
 
-        // rotationsfarten är lika med 200
-        rotationspeed = 200;
+        
+        
     }
 
     // Update is called once per frame
@@ -48,10 +48,10 @@ public class StarShipScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {    // första kommandot gör så att när knappen a trycks ner så svänger den åt höger och det andra i mosvingarna gör så att när man trycker a blir skeppet grönt
 
-            transform.Rotate(0f, 0f, rotationspeed * Time.deltaTime);
+            transform.Rotate(0f, 0f, (rotationspeed - 100) * Time.deltaTime);
             rend.color = new Color(0f, 1f, 0f);
-            rotationspeed = 100;
-            // gör så den svänge hälften av vad rotationspeed = med 
+            
+            // gör så den svänge -100 av vad rotationspeed randomizer till.
 
         }
 
@@ -62,7 +62,7 @@ public class StarShipScript : MonoBehaviour
 
             transform.Rotate(0f, 0f, -rotationspeed * Time.deltaTime);
             rend.color = new Color(0f, 0f, 1f);
-            rotationspeed = 200;
+                   
             // gär så skeppet svänger i farten 200 hundra när man klickar d
         }
         // När man klickar påc tangenten s så kommer något att hända
